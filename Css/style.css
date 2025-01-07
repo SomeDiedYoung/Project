@@ -490,6 +490,15 @@ padding-bottom: 150px;
     margin: 0 auto;
 }
 
+.lang-en, .lang-ge {
+    padding: 5px;
+}
+
+.lang-en.active, .lang-ge.active {
+    color: #007bff; 
+    font-weight: bold; 
+}
+
 
 /* NEW CARS / CARDS */
 .choose{

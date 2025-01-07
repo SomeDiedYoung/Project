@@ -1,86 +1,101 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const loginSection = document.getElementById("loginSection");
-    const registerSection = document.getElementById("registerSection");
-    const showRegister = document.getElementById("showRegister");
-    const showLogin = document.getElementById("showLogin");
+const loginSection = document.getElementById('loginSection');
+const registerSection = document.getElementById('registerSection');
+const showRegister = document.getElementById('showRegister');
+const showLogin = document.getElementById('showLogin');
 
-    const registerForm = document.getElementById("registerForm");
-    const loginForm = document.getElementById("loginForm");
+showRegister.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginSection.style.display = 'none';
+    registerSection.style.display = 'block';
+});
 
-    showRegister.addEventListener("click", (e) => {
-        e.preventDefault();
-        loginSection.style.display = "none";
-        registerSection.style.display = "block";
-    });
+showLogin.addEventListener('click', (e) => {
+    e.preventDefault();
+    registerSection.style.display = 'none';
+    loginSection.style.display = 'block';
+});
 
-    showLogin.addEventListener("click", (e) => {
-        e.preventDefault();
-        registerSection.style.display = "none";
-        loginSection.style.display = "block";
-    });
+// Индикатор надёжности пароля
+const passwordInput = document.getElementById('password');
+const strengthIndicator = document.getElementById('strengthIndicator');
+const passwordStrength = document.getElementById('passwordStrength');
 
-    registerForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+passwordInput.addEventListener('focus', () => {
+    passwordStrength.style.display = 'block';  // Показать индикатор при фокусе на поле
+});
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
-        const confirmPassword = document.getElementById("confirmPassword").value;
-        const country = document.getElementById("country").value.trim();
-        const city = document.getElementById("city").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const registerMessage = document.getElementById("registerMessage");
+passwordInput.addEventListener('input', () => {
+    const password = passwordInput.value;
+    let strength = 'None';
+    let color = 'black';
 
-        registerMessage.textContent = "";
+    // Простая проверка: слабый, средний, сильный
+    if (password.length === 0) {
+        strength = 'None';  // Если пароль пустой
+        color = 'black';
+    } else if (password.length < 6) {
+        strength = 'Weak';  // Если пароль короткий
+        color = 'red';
+    } else if (password.length >= 6 && !/\d/.test(password) && !/[^\w\s]/.test(password)) {
+        strength = 'Weak';  // Только буквы
+        color = 'red';
+    } else if (password.length >= 6 && /\d/.test(password) && !/[^\w\s]/.test(password)) {
+        strength = 'Medium';  // Буквы и цифры
+        color = 'orange';
+    } else if (password.length >= 6 && /\d/.test(password) && /[^\w\s]/.test(password)) {
+        strength = 'Strong';  // Буквы, цифры и специальные символы
+        color = 'green';
+    }
 
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            registerMessage.textContent = "Invalid email address.";
-            return;
-        }
-        if (password.length < 6) {
-            registerMessage.textContent = "Password must be at least 6 characters.";
-            return;
-        }
-        if (password !== confirmPassword) {
-            registerMessage.textContent = "Passwords do not match.";
-            return;
-        }
-        if (!name || !country || !city || !phone) {
-            registerMessage.textContent = "All fields are required.";
-            return;
-        }
+    strengthIndicator.textContent = strength;
+    strengthIndicator.style.color = color;
+});
 
-        const user = { name, email, password, country, city, phone };
-        localStorage.setItem("user", JSON.stringify(user));
-        registerMessage.textContent = "Registration successful!";
-        registerMessage.style.color = "green";
+passwordInput.addEventListener('blur', () => {
+    passwordStrength.style.display = 'none';  // Скрыть индикатор при потере фокуса
+});
 
-        registerForm.reset();
-    });
+// Сохранение данных пользователя в localStorage
+const registerForm = document.getElementById('registerForm');
+registerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-    loginForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+    // Проверка, что пароли совпадают
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    if (password !== confirmPassword) {
+        document.getElementById('registerMessage').textContent = 'Passwords do not match!';
+        return;
+    }
 
-        const email = document.getElementById("loginEmail").value.trim();
-        const password = document.getElementById("loginPassword").value;
-        const loginMessage = document.getElementById("loginMessage");
+    if (localStorage.getItem(email)) {
+        document.getElementById('registerMessage').textContent = 'User already exists!';
+        return;
+    }
 
-        loginMessage.textContent = "";
+    localStorage.setItem(email, JSON.stringify({ password }));
+    
+    registerForm.reset();
+    var message = document.getElementById('registerMessage');
+    message.style.color = 'green'
+    message.textContent = 'Registration successful!';
+});
 
-        const storedUser = JSON.parse(localStorage.getItem("user"));
+const loginForm = document.getElementById('loginForm');
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
 
-        if (!storedUser) {
-            loginMessage.textContent = "No user found. Please register first.";
-            return;
-        }
-
-        if (storedUser.email === email && storedUser.password === password) {
-            loginMessage.textContent = "Login successful!";
-            loginMessage.style.color = "green";
-        } else {
-            loginMessage.textContent = "Invalid email or password.";
-        }
-
-        loginForm.reset();
-    });
+    const userData = JSON.parse(localStorage.getItem(email));
+    if (userData && userData.password === password) {
+       var message = document.getElementById('loginMessage');
+       message.style.color = 'green';
+       message.textContent = 'Login successful!';
+    } else {
+        document.getElementById('loginMessage');
+        var message = document.getElementById('loginMessage');
+        message.textContent = 'Incorrect inputia!'
+    }
 });
