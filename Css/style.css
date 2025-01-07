@@ -194,7 +194,7 @@ html, body {
         color: #fff;
         padding: 10px;
         cursor: pointer;
-        z-index: 1000;
+        z-index: 20;
         font-size: 24px; 
     }
 
@@ -472,6 +472,8 @@ padding-bottom: 150px;
     color:white;
     background-color: #0066ff;
     padding: 4px 20px;
+    height: 40px;
+    text-align: center;
 }
 
 .showmore-link{
@@ -495,11 +497,10 @@ padding-bottom: 150px;
 }
 
 .tabs__btn{
-    padding: 0 150px;
+    padding: 0 150px 100px;
     display: flex;
     justify-content: space-between;
     gap:80px;
-    padding-bottom: 100px;
 }
 
 .tabs__btn-item{
@@ -516,9 +517,13 @@ padding-bottom: 150px;
 }
 
 .tabs__content-item{
-    display: grid;
+    display: none;
     grid-template-columns: repeat(4,1fr);
     gap: 100px 40px;
+}
+
+.tabs__content-item--active{
+    display: grid;
 }
 
 .card{
@@ -585,6 +590,9 @@ padding-bottom: 150px;
     width: 100%;
 }
 
+.card__img{
+width: 100%;}
+
 @media (max-width: 1180px) {
     .important__list{
     gap: 30px 20px;
@@ -592,11 +600,18 @@ padding-bottom: 150px;
     .important__item-img{
     width: 100%;    
     }
+    .tabs__content-item{
+        grid-template-columns: repeat(3,1fr);
+    }
 }
 
 @media (max-width: 1040px){
     .video__content{
     width: 100%;
+    }
+    .tabs__btn{
+    padding: 0 0 50px;
+    gap: 20px;
     }
 }
 
@@ -608,6 +623,7 @@ padding-bottom: 150px;
     .important__list{
     grid-template-columns: repeat(2, 1fr);
     }   
+
     .menu__btn{
     display: flex;
     }
@@ -633,6 +649,9 @@ padding-bottom: 150px;
     transform: translateY(-100%);
     transition: transform .3s ease-in;
     }
+    .tabs__content-item{
+        grid-template-columns: repeat(2,1fr);
+    }
 }
 @media (max-width:768px) {
     .swiper-pagination-bullet{
@@ -657,6 +676,19 @@ padding-bottom: 150px;
     }
     .video__content{
     height: 400px;
+    }
+
+}
+
+@media (max-width:650px){
+    .tabs__content-item{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .tabs__btn-item{
+    font-size: 18px;
+    }
+    .blog__items{
+    grid-template-columns: repeat(1,1fr);
     }
 }
 
@@ -717,4 +749,12 @@ padding-bottom: 150px;
     align-items: center;
     gap: 20px;
     }
+    .blog__item-title{
+        margin-bottom: 10px;}
+        .blog__item-link{
+        margin: 0 auto}
+    .tabs__btn{
+    flex-direction: column;
+    }
 }
+
