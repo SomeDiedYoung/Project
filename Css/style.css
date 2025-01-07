@@ -756,5 +756,9 @@ width: 100%;}
     .tabs__btn{
     flex-direction: column;
     }
+    .choose{
+    padding: 50px 0;}
+    .tabs__content-item{
+    gap: 40px;}
 }
 
