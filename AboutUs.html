@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Css/style.css">
-    <link rel="stylesheet" href="Css/form.css">
-</head>
-
-<body>
+  </head>
+  <body>
     <div class="wrapper">
         <header class="header">
             <div class="container">
@@ -35,13 +32,13 @@
                                 <a href="#" class="menu__list-link">PRE-OWNED CARS</a>
                             </li>
                             <li class="menu__list-item">
-                                <a href="AboutUs.html" class="menu__list-link">About Us</a>
+                                <a href="AboutUs.html" class="menu__list-link menu__list-link--active"">About US</a>
                             </li>
                             <li class="menu__list-item">
                                 <a href="#" class="menu__list-link">En / ge</a>
-                            </li>
+                                </li>
                             <li class="menu__list-item">
-                                <a href="#" class="menu__list-link menu__list-link--active">Login</a>
+                                <a href="contacts.html" class="menu__list-link">Login</a>
                             </li>
                         </ul>
                     </nav>
@@ -50,60 +47,59 @@
         </header>
 
         <main class="main">
-
-
-                <section class="auth-section">
+            <section class="choose">
                 <div class="container">
-                    <div id="authContent" class="auth-content">
-                        <!-- Login Form -->
-                        <div id="loginSection">
-                            <h2 class="section-title">Login</h2>
-                            <form id="loginForm" class="form">
-                                <input type="email" class="form__input" id="loginEmail" placeholder="E-mail" required>
-                                <input type="password" class="form__input" id="loginPassword" placeholder="Password" required>
-                                <button class="form__btn" type="submit">Login</button>
-                                <div id="loginMessage" class="form__message"></div>
-                            </form>
-                            <p class="switch-text">
-                                If you haven't an account, you can <a href="#" id="showRegister">Register</a>.
-                            </p>
-                        </div>
-        
-                        <!-- Register Form -->
-                        <div id="registerSection" style="display: none;">
-                            <h2 class="section-title">Register</h2>
-                            <form id="registerForm" class="form">
-                                <input type="text" class="form__input" id="name" placeholder="Name" required>
-                                <input type="email" class="form__input" id="email" placeholder="E-mail" required>
-                                <input type="password" class="form__input" id="password" placeholder="Password" required>
-                                <!-- Индикатор надёжности пароля -->
-                                <div id="passwordStrength" class="form__message" style="display: none;">
-                                    Strength: <span id="strengthIndicator">None</span>
+                    <section class="team">
+                        <div class="container">
+                            <div class="section-title">Meet Our Team</div>
+                            <div class="team__list">
+                                <div class="team__member">
+                                    <img src="images/team-member1.webp" alt="Team Member 1" class="team__member team__member-img">
+                                    <div class="team__member-info">
+                                        <h3 class="team__member-name">Sabo</h3>
+                                        <p class="team__member-role">Carries Ace's legacy by consuming his Devil Fruit</p>
+                                    </div>
                                 </div>
-                                <input type="password" class="form__input" id="confirmPassword" placeholder="Confirm Password" required>
-                                <input type="text" class="form__input" id="country" placeholder="Country" required>
-                                <input type="text" class="form__input" id="city" placeholder="City" required>
-                                <input type="text" class="form__input" id="phone" placeholder="Phone Number" required>
-                                <button class="form__btn" type="submit">Register</button>
-                                <div id="registerMessage" class="form__message"></div>
-                            </form>
-                            <p class="switch-text">
-                                Already have an account? <a href="#" id="showLogin">Login</a>.
-                            </p>
+                                <div class="team__member">
+                                    <img src="images/team-member1.jpg" alt="Team Member 2" class=" team__member team__member-img">
+                                    <div class="team__member-info">
+                                        <h3 class="team__member-name">Monkey D. Luffy</h3>
+                                        <p class="team__member-role">Captain of the Straw Hat Piratesr</p>
+                                    </div>
+                                </div>
+                                <div class="team__member">
+                                    <img src="images/team-member3.jpg" alt="Team Member 3" class="team__member team__member-img">
+                                    <div class="team__member-info">
+                                        <h3 class="team__member-name">Portgas D. Ace</h3>
+                                        <p class="team__member-role">R.I.P My G he was real Man</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </section>
+                
+                    <section class="contact-info">
+                        <div class="container">
+                            <div class="section-title">Contact Us</div>
+                            <h3 class="contact-info__text">
+                                Feel free to reach out to us if you have any questions. We are here to help and would love to hear from you.
+                            </h3>
+                            <div class="contact-info__details">
+                                <p><strong>Email:</strong> BBC@OnePieceIsReal.com</p>
+                                <p><strong>Phone:</strong> +1 337 420 228</p>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </section>
+     
         </main>
-        
 
         <footer class="footer">
             <div class="container">
                 <nav class="footer__menu">
                     <ul class="footer__menu-list">
-
-                        <li class="footer__menu-item">
-                            <p class="footer__menu-title">Products</p>
+                        
+                        <li class="footer__menu-item"><p class="footer__menu-title">Products</p>
                         </li>
                         <li class="footer__menu-item"><a href="#" class="footer__menu-link">Used</a>
                         </li>
@@ -112,11 +108,10 @@
                         <li class="footer__menu-item"><a href="#" class="footer__menu-link">Sell your car</a>
                         </li>
                     </ul>
-
+                    
                     <ul class="footer__menu-list">
-
-                        <li class="footer__menu-item">
-                            <p class="footer__menu-title">Resources</p>
+                        
+                        <li class="footer__menu-item"><p class="footer__menu-title">Resources</p>
                         </li>
                         <li class="footer__menu-item"><a href="#" class="footer__menu-link">Blog</a>
                         </li>
@@ -125,22 +120,20 @@
                         <li class="footer__menu-item"><a href="#" class="footer__menu-link">Login</a>
                         </li>
                     </ul>
-
+                    
                     <ul class="footer__menu-list">
-
-                        <li class="footer__menu-item">
-                            <p class="footer__menu-title">Work With TrueCar</p>
+                        
+                        <li class="footer__menu-item"><p class="footer__menu-title">Work With TrueCar</p>
                         </li>
                         <li class="footer__menu-item"><a href="#" class="footer__menu-link">Dealers</a>
                         </li>
                         <li class="footer__menu-item"><a href="#" class="footer__menu-link">Partners</a>
                         </li>
                     </ul>
-
+                    
                     <ul class="footer__menu-list">
-
-                        <li class="footer__menu-item">
-                            <p class="footer__menu-title">About</p>
+                        
+                        <li class="footer__menu-item"><p class="footer__menu-title">About</p>
                         </li>
                         <li class="footer__menu-item"><a href="#" class="footer__menu-link">About us</a>
                         </li>
@@ -153,12 +146,12 @@
                 <ul class="app">
                     <li class="app__item">
                         <a href="#" class="app__item-link">
-                            <img src="images/appstore.svg" class="app__item-img" alt="">
+                            <img src="images/appstore.svg" class="app__item-img" alt=""> 
                         </a>
                     </li>
                     <li class="app__item">
                         <a href="#" class="app__item-link">
-                            <img src="images/googlepay.svg" class="app__item-img" alt="">
+                            <img src="images/googlepay.svg" class="app__item-img" alt=""> 
                         </a>
                     </li>
                 </ul>
@@ -166,13 +159,13 @@
                     <p class="footer__copy-text">
                         For questions about the TrueCar Auto Buying Service please call 1-888-878-3227.
                         Certified Dealers are contractually obligated by TrueCar to meet certain customer
-                        service requirements
+                         service requirements 
                         and complete the TrueCar Dealer Certification Program.
                     </p>
                     <p class="footer__copy-text">
-                        TrueCar does not broker, sell, or lease motor vehicles. Unless otherwise
-                        noted, all vehicles shown on this website are offered for sale by licensed
-                        motor vehicle dealers. All vehicles are subject to prior sale. By accessing
+                        TrueCar does not broker, sell, or lease motor vehicles. Unless otherwise 
+                        noted, all vehicles shown on this website are offered for sale by licensed 
+                        motor vehicle dealers. All vehicles are subject to prior sale. By accessing 
                         this website, you agree to the TrueCar Terms of Service and Privacy Policy.
                     </p>
                 </div>
@@ -182,8 +175,7 @@
                         </li>
                         <li class="copy__nav-item"><a href="#" class="copy__nav-link">Privacy Policy</a>
                         </li>
-                        <li class="copy__nav-item"><a href="#" class="copy__nav-link">Do Not Sell My Personal
-                                Information</a>
+                        <li class="copy__nav-item"><a href="#" class="copy__nav-link">Do Not Sell My Personal Information</a>
                         </li>
                     </ul>
                 </nav>
@@ -192,7 +184,6 @@
         </footer>
     </div>
     <script src="js/burger.js"></script>
-    <script src="js/registration.js"></script>
-</body>
 
+  </body>
 </html>
