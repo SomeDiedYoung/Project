@@ -38,8 +38,9 @@
                                 <a href="AboutUs.html" class="menu__list-link">About Us</a>
                             </li>
                             <li class="menu__list-item">
-                                <a href="#" class="menu__list-link">En / ge</a>
-                            </li>
+                                <a href="#" class="menu__list-link " data-translate="lease_vs_buy">
+                                    <span class="lang-en ">En</span>/<span class="lang-ge">Ge</span>
+                                </a>                            </li>
                             <li class="menu__list-item">
                                 <a href="#" class="menu__list-link menu__list-link--active">Login</a>
                             </li>
@@ -55,41 +56,39 @@
                 <section class="auth-section">
                 <div class="container">
                     <div id="authContent" class="auth-content">
-                        <!-- Login Form -->
                         <div id="loginSection">
-                            <h2 class="section-title">Login</h2>
+                            <h2 class="section-title" data-translate="login">Login</h2>
                             <form id="loginForm" class="form">
                                 <input type="email" class="form__input" id="loginEmail" placeholder="E-mail" required>
                                 <input type="password" class="form__input" id="loginPassword" placeholder="Password" required>
-                                <button class="form__btn" type="submit">Login</button>
+                                <button class="form__btn" type="submit" data-translate="button">Login</button>
                                 <div id="loginMessage" class="form__message"></div>
                             </form>
-                            <p class="switch-text">
-                                If you haven't an account, you can <a href="#" id="showRegister">Register</a>.
-                            </p>
+                            <p class="switch-text" data-translate="text">
+                                If you haven't an account, you can </p> <a href="#" id="showRegister" style="display: block;margin: 0 auto;" data-translate="loginRegister">Register</a>
                         </div>
         
-                        <!-- Register Form -->
+
                         <div id="registerSection" style="display: none;">
-                            <h2 class="section-title">Register</h2>
+                            <h2 class="section-title" data-translate="Register">Register</h2>
                             <form id="registerForm" class="form">
                                 <input type="text" class="form__input" id="name" placeholder="Name" required>
                                 <input type="email" class="form__input" id="email" placeholder="E-mail" required>
                                 <input type="password" class="form__input" id="password" placeholder="Password" required>
-                                <!-- Индикатор надёжности пароля -->
-                                <div id="passwordStrength" class="form__message" style="display: none;">
+
+                                <div id="passwordStrength" class="form__message" style="display: none;" data-translate="passwordStrength">
                                     Strength: <span id="strengthIndicator">None</span>
                                 </div>
                                 <input type="password" class="form__input" id="confirmPassword" placeholder="Confirm Password" required>
                                 <input type="text" class="form__input" id="country" placeholder="Country" required>
                                 <input type="text" class="form__input" id="city" placeholder="City" required>
                                 <input type="text" class="form__input" id="phone" placeholder="Phone Number" required>
-                                <button class="form__btn" type="submit">Register</button>
+                                <button class="form__btn" type="submit" data-translate="registerButton">Register</button>
                                 <div id="registerMessage" class="form__message"></div>
                             </form>
-                            <p class="switch-text">
-                                Already have an account? <a href="#" id="showLogin">Login</a>.
-                            </p>
+                            <p class="switch-text" data-translate="registerText">
+                                Already have an account? </p> <a href="#" id="showLogin" data-translate="registerLogin"  style="display: inline-block;margin: 0 auto;">Login</a>
+                            
                         </div>
                     </div>
                 </div>
@@ -193,6 +192,7 @@
     </div>
     <script src="js/burger.js"></script>
     <script src="js/registration.js"></script>
+    <script src="js/ContactsLanguage.js"></script>
 </body>
 
 </html>

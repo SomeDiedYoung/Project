@@ -278,6 +278,18 @@ html, body {
 }
 
 
+#loginSection{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#registerSection{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
 .how__does-item + .how__does-item{
     margin-top: 40px;
 }
@@ -476,6 +488,13 @@ padding-bottom: 150px;
     text-align: center;
 }
 
+#showRegister{
+    color: #0066ff;
+}
+#showLogin{
+    color: #0066ff;
+
+}
 .showmore-link{
     display: block;
     text-align: center;
@@ -775,7 +794,6 @@ width: 100%;}
     color: #777;
 }
 
-/* Респонсив для меньших экранов */
 @media (max-width: 1200px) {
     .team__list {
         justify-content: center;
